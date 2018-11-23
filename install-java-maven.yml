@@ -1,0 +1,10 @@
+- name: Install Java and Maven on the containers
+  hosts: all
+  become: yes
+  gather_facts: false
+  tasks:
+       - name: Insatll Java on the container
+         apt: name=openjdk-8-jdk-headless state=latest update_cache=yes
+
+       - name: Insatll maven on the container
+         apt: name=maven state=latest update_cache=yes

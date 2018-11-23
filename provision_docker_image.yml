@@ -1,0 +1,8 @@
+- name: This playbook builds the jenkins slave docker images
+  hosts: localhost
+  tasks:
+          - name: Build docker image
+            docker_image:
+                    name: "verizon/jenkins-slave"
+                    path: "."
+                    dockerfile: Dockerfile
